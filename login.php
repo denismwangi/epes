@@ -20,12 +20,20 @@ header("location:index.php?page=home");
 ?>
 <?php include 'header.php' ?>
 <body class="hold-transition login-page bg-black">
-  <h2><b><?php echo $_SESSION['system']['name'] ?> - Admin</b></h2>
+  <!-- <h2><b><?php// echo $_SESSION['system']['name'] ?> - Admin</b></h2> -->
+     <h2><b>Health Insurance Employee Performance Evaluation System</b></h2> 
+
 <div class="login-box">
   <div class="login-logo">
     <a href="#" class="text-white"></a>
   </div>
   <!-- /.login-logo -->
+  <style type="text/css">
+    .bg-black{
+      background-color: #d0d7de !important;
+
+    }
+  </style>
   <div class="card">
     <div class="card-body login-card-body">
       <form action="" id="login-form">
@@ -48,8 +56,8 @@ header("location:index.php?page=home");
         <div class="form-group mb-3">
           <label for="">Login As</label>
           <select name="login" id="" class="custom-select custom-select-sm">
-            <option value="0">Employee</option>
-            <option value="1">Evaluator</option>
+            <!-- <option value="0">Employee</option>
+            <option value="1">Evaluator</option> -->
             <option value="2">Admin</option>
           </select>
         </div>

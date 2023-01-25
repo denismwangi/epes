@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2021 at 06:56 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.2.34
+-- Generation Time: Jan 25, 2023 at 10:18 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,8 @@ CREATE TABLE `department_list` (
 
 INSERT INTO `department_list` (`id`, `department`, `description`) VALUES
 (1, 'IT Department', 'Information Technology Department'),
-(2, 'Sample  Departement', 'Sample Only');
+(3, 'Sales And Marketing', 'Sales And Marketing Department'),
+(4, 'Human Resource', 'Human Resource Department');
 
 -- --------------------------------------------------------
 
@@ -58,10 +59,9 @@ CREATE TABLE `designation_list` (
 --
 
 INSERT INTO `designation_list` (`id`, `designation`, `description`) VALUES
-(1, 'Sr. Programmer', 'Senior Programmer'),
-(2, 'Jr. Programmer', 'Junior Programmer'),
-(3, 'Project Manager', 'Project Manager'),
-(4, 'QA/QC Analyst', 'Quality Assurance and Quality Control Analyst');
+(4, 'QA/QC Analyst', 'Quality Assurance and Quality Control Analyst'),
+(5, 'Sales manager', 'Sales manager'),
+(6, 'Outside sales representative.', 'Outside sales representative.');
 
 -- --------------------------------------------------------
 
@@ -89,8 +89,7 @@ CREATE TABLE `employee_list` (
 --
 
 INSERT INTO `employee_list` (`id`, `employee_id`, `firstname`, `middlename`, `lastname`, `email`, `password`, `department_id`, `designation_id`, `evaluator_id`, `avatar`, `date_created`) VALUES
-(1, '', 'John', '', 'Smith', 'jsmith@sample.com', '1254737c076cf867dc53d60a0364f38e', 1, 2, 1, '1607134500_avatar.jpg', '2020-12-05 10:15:38'),
-(2, '', 'asdasd', 'd', 'asdasd', 'mwilliams@sample.com', 'a88df23ac492e6e2782df6586a0c645f', 1, 2, 1, 'no-image-available.png', '2021-03-02 13:52:48');
+(3, '', 'mark', '', 'Njoroge', 'mark@gmail.com', '25d55ad283aa400af464c76d713c07ad', 3, 5, 1, 'no-image-available.png', '2023-01-25 12:04:01');
 
 -- --------------------------------------------------------
 
@@ -115,7 +114,7 @@ CREATE TABLE `evaluator_list` (
 --
 
 INSERT INTO `evaluator_list` (`id`, `employee_id`, `firstname`, `middlename`, `lastname`, `email`, `password`, `avatar`, `date_created`) VALUES
-(1, '', 'Claire', '', 'Blake', 'cblake@sample.com', '4744ddea876b11dcb1d169fadf494418', '1607136060_47446233-clean-noir-et-gradient-sombre-image-de-fond-abstrait-.jpg', '2020-12-05 10:41:34');
+(1, '', 'Claire', '', 'Muthoni', 'claire@gmail.com', '25d55ad283aa400af464c76d713c07ad', '1607136060_47446233-clean-noir-et-gradient-sombre-image-de-fond-abstrait-.jpg', '2020-12-05 10:41:34');
 
 -- --------------------------------------------------------
 
@@ -188,7 +187,10 @@ CREATE TABLE `task_list` (
 
 INSERT INTO `task_list` (`id`, `task`, `description`, `employee_id`, `due_date`, `completed`, `status`, `date_created`) VALUES
 (1, 'Sample Task 1', '																					Sample Only																		', 1, '2020-12-02', '0000-00-00', 2, '2020-12-05 11:06:15'),
-(2, 'Sample Task 2', '														&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-size: 14px; text-align: justify;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida, magna eu sagittis venenatis, lorem tellus mollis tellus, viverra facilisis metus odio vel dui. Sed posuere interdum ultrices. Pellentesque blandit enim in condimentum pretium. Suspendisse id tortor sit amet augue rutrum condimentum. Fusce ac mattis purus, eget vehicula sem. Maecenas sit amet orci id lorem tristique tempor. Nullam iaculis quis velit at dapibus. Nullam scelerisque, metus vitae feugiat aliquam, risus turpis pellentesque justo, vitae varius urna leo vitae nisl. Pellentesque viverra ipsum et diam blandit varius. Suspendisse blandit ex vitae hendrerit volutpat. Nulla fermentum dolor at lorem accumsan, nec lacinia mi pellentesque. Mauris ac augue vel elit lobortis maximus.&lt;/span&gt;																									', 1, '2020-12-24', '0000-00-00', 0, '2020-12-05 13:09:05');
+(2, 'Sample Task 2', '														&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-size: 14px; text-align: justify;&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida, magna eu sagittis venenatis, lorem tellus mollis tellus, viverra facilisis metus odio vel dui. Sed posuere interdum ultrices. Pellentesque blandit enim in condimentum pretium. Suspendisse id tortor sit amet augue rutrum condimentum. Fusce ac mattis purus, eget vehicula sem. Maecenas sit amet orci id lorem tristique tempor. Nullam iaculis quis velit at dapibus. Nullam scelerisque, metus vitae feugiat aliquam, risus turpis pellentesque justo, vitae varius urna leo vitae nisl. Pellentesque viverra ipsum et diam blandit varius. Suspendisse blandit ex vitae hendrerit volutpat. Nulla fermentum dolor at lorem accumsan, nec lacinia mi pellentesque. Mauris ac augue vel elit lobortis maximus.&lt;/span&gt;																									', 1, '2020-12-24', '0000-00-00', 0, '2020-12-05 13:09:05'),
+(3, 'Build a strategic sales plan', 'Come up with a good plan on how to increase sales by 2%.', 3, '2023-01-31', '0000-00-00', 0, '2023-01-25 12:07:08'),
+(4, 'Creates quotas for sales reps', '&lt;span style=&quot;color: rgb(34, 34, 34); font-family: Roboto, Arial, sans-serif; letter-spacing: 0.16px; background-color: rgb(252, 252, 252);&quot;&gt;creates quotas for sales reps&lt;/span&gt;													', 3, '2023-01-31', '0000-00-00', 0, '2023-01-25 12:07:52'),
+(5, 'Create this month budgets', '													', 3, '2023-01-31', '0000-00-00', 0, '2023-01-25 12:08:44');
 
 -- --------------------------------------------------------
 
@@ -237,7 +239,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `avatar`, `date_created`) VALUES
 (1, 'Administrator', '', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', '1607135820_avatar.jpg', '2020-11-26 10:57:04'),
-(2, 'Claire', 'Blake', 'cblake@sample.com', 'cd74fae0a3adf459f73bbf187607ccea', 'no-image-available.png', '2021-03-02 13:53:17');
+(2, 'Claire', 'Blake', 'cblake@sample.com', '827ccb0eea8a706c4c34a16891f84e7b', 'no-image-available.png', '2021-03-02 13:53:17');
 
 --
 -- Indexes for dumped tables
@@ -305,19 +307,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `department_list`
 --
 ALTER TABLE `department_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `designation_list`
 --
 ALTER TABLE `designation_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `employee_list`
 --
 ALTER TABLE `employee_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `evaluator_list`
@@ -341,7 +343,7 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT for table `task_list`
 --
 ALTER TABLE `task_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `task_progress`

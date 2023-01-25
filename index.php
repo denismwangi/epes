@@ -34,7 +34,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0"><?php echo $title ?></h1>
+            <h1 class="m-0"></h1>
           </div><!-- /.col -->
 
         </div><!-- /.row -->
@@ -122,10 +122,9 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://www.sourcecodester.com/">sourcecodester.com</a>.</strong>
-    All rights reserved.
+   
     <div class="float-right d-none d-sm-inline-block">
-      <b><?php echo $_SESSION['system']['name'] ?></b>
+      <b><?php //echo $_SESSION['system']['name'] ?></b>
     </div>
   </footer>
 </div>

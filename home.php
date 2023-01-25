@@ -34,7 +34,7 @@ if($_SESSION['login_type'] != 1)
            <div class="col-12 col-sm-6 col-md-4">
             <div class="small-box bg-light shadow-sm border">
               <div class="inner">
-                <h3><?php echo $conn->query("SELECT * FROM users")->num_rows; ?></h3>
+                <h3><?php //echo $conn->query("SELECT * FROM users")->num_rows; ?>0</h3>
 
                 <p>Total Users</p>
               </div>
@@ -58,7 +58,7 @@ if($_SESSION['login_type'] != 1)
           <div class="col-12 col-sm-6 col-md-4">
             <div class="small-box bg-light shadow-sm border">
               <div class="inner">
-                <h3><?php echo $conn->query("SELECT * FROM evaluator_list")->num_rows; ?></h3>
+                <h3><?php echo $conn->query("SELECT * FROM evaluator_list")->num_rows; ?> </h3>
 
                 <p>Total Evaluators</p>
               </div>

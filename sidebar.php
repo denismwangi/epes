@@ -15,7 +15,7 @@
     <div class="sidebar pb-4 mb-4">
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="false">
-         <li class="nav-item dropdown">
+         <li class="nav-item dropdown" style="margin-top: 20px;"> 
             <a href="./" class="nav-link nav-home">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -27,19 +27,20 @@
             <a href="./index.php?page=task_list" class="nav-link nav-task_list">
               <i class="nav-icon fas fa-tasks"></i>
               <p>
-                Tasks
+                Employees Tasks Targets 
               </p>
             </a>
           </li> 
+
           <?php if($_SESSION['login_type'] != 0): ?>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a href="./index.php?page=evaluation" class="nav-link nav-evaluation">
               <i class="nav-icon far fa-edit"></i>
               <p>
                 Evaluation
               </p>
             </a>
-          </li>
+          </li> -->
         <?php endif; ?>
           <?php if($_SESSION['login_type'] == 2): ?>
           <li class="nav-item dropdown">
@@ -104,7 +105,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+         <!--  <li class="nav-item">
             <a href="#" class="nav-link nav-edit_user">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -126,7 +127,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
         <?php endif; ?>
         </ul>
       </nav>

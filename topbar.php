@@ -8,7 +8,8 @@
       </li>
     <?php endif; ?>
       <li>
-        <a class="nav-link text-white"  href="./" role="button"> <large><b><?php echo $_SESSION['system']['name'] ?></b></large></a>
+       <!--  <a class="nav-link text-white"  href="./" role="button"> <large><b><?php echo $_SESSION['system']['name'] ?></b></large></a> -->
+       <a class="nav-link text-white"  href="./" role="button"> <large><b>Health Insurance Employee Performance Evaluation System</b></large></a>
       </li>
     </ul>
 
