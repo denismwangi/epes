@@ -37,7 +37,7 @@ header("location:index.php?page=home");
   <div class="card">
     <div class="card-body login-card-body">
       <form action="" 
-      id=""
+      id="login-form"
       >
       <!--  id="login-form" -->
 
@@ -60,8 +60,8 @@ header("location:index.php?page=home");
         <div class="form-group mb-3">
           <label for="">Login As</label>
           <select name="login" id="" class="custom-select custom-select-sm">
-            <!-- <option value="0">Employee</option>
-            <option value="1">Evaluator</option> -->
+            <option value="0">Employee</option>
+            <option value="1">Evaluator</option>
             <option value="2">Admin</option>
           </select>
         </div>
